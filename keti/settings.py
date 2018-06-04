@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'yundongyuan',
     'events',
     'xunlian',
-    'chengji',
+    # 'chengji',
     'shenghua',
     'analysis',
+    'achievement',
 ]
 
 AUTH_USER_MODEL = 'users.UserProfile'

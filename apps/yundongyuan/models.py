@@ -5,7 +5,7 @@ from users.models import UserProfile
 
 # Create your models here.
 class Athlete(models.Model):
-    name = models.CharField(max_length=50, verbose_name=u'昵称')
+    name = models.CharField(max_length=50, verbose_name=u'姓名')
     birthday = models.DateField(null=True, blank=True, verbose_name=u'出生年月', default='2010-01-01')
     gender = models.CharField(max_length=6, choices=(("male", u"男"), ("female", u"女")), default=u"male",
                               verbose_name=u'性别')

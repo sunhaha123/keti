@@ -24,6 +24,9 @@ class  ChengjiDateAdmin(object):
             sport_id_list = []
             for i in range(1, row):
                 col = table.row_values(i)
+                for j in range(4,7):
+                     if col[j]=='':
+                             col[j]=0
                 sql = ChengjiDate(
                     athlete_id=col[0],
                     date=str(datetime(*xldate_as_tuple(col[1], 0)))[0:10],
