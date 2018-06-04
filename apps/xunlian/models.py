@@ -9,7 +9,7 @@ class XunlianDate(models.Model):
     xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
     riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
     xiangmu = models.ForeignKey(Xiangmu, verbose_name=u'体操项目')
-    content = models.CharField(max_length=50, default=u'', verbose_name=u'训练内容')
+    content = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'训练内容')
 
     class Meta:
         verbose_name = u'训练记录'

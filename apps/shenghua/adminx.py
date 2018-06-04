@@ -24,14 +24,19 @@ class  ShenghuaDateAdmin(object):
             sport_id_list = []
             for i in range(1, row):
                 col = table.row_values(i)
+                for j in range(2,7):
+                     if col[j]=='':
+                             col[j]=0
                 sql = ShenghuaDate(
                     athlete_id=col[0],
                     date=str(datetime(*xldate_as_tuple(col[1], 0)))[0:10],
-                    gaotong=col[2],
-                    pizhichun=col[3],
-                    niaosudan=col[4],
-                    jisuanjimei=col[5],
+                    gaotong=float(col[2]),
+                    pizhichun=float(col[3]),
+                    niaosudan=float(col[4]),
+                    jisuanjimei=float(col[5]),
+
                     tc=col[6],
+                    yichang=col[9]
                 )
                 sql_list.append(sql)
             ShenghuaDate.objects.bulk_create(sql_list)

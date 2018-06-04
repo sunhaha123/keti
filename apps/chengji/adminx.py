@@ -53,4 +53,4 @@ class  ChengjiShAdmin(object):
 
 # xadmin.site.register(UserProfile,UserProfileAdmin)
 xadmin.site.register(ChengjiDate,ChengjiDateAdmin)
-xadmin.site.register(ChengjiSh,ChengjiShAdmin)
+# xadmin.site.register(ChengjiSh,ChengjiShAdmin)

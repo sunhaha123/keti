@@ -9,7 +9,7 @@ class ChengjiDate(models.Model):
     athlete = models.ForeignKey(Athlete, verbose_name=u'运动员姓名')
     date = models.DateField(null=True, blank=True, verbose_name=u'比赛日期', default='2010-01-01')
     mingcheng = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'赛事名称')
-    jibie = models.CharField(max_length=6,choices=(("guoji",u"国际"),("quanguo",u"全国"),("shengji",u"省级")),default=u"省级",verbose_name=u'赛事级别')
+    jibie = models.CharField(max_length=50,choices=(("guoji",u"国际"),("quanguo",u"全国"),("shengji",u"省级")),default=u"全国",verbose_name=u'赛事级别')
     xiangmu = models.ForeignKey(Xiangmu, verbose_name=u'体操项目')
     nandufen = models.FloatField(verbose_name=u'难度分')
     wanchengfen = models.FloatField(verbose_name=u'完成')

@@ -26,7 +26,7 @@ SECRET_KEY = '7@!garn2ra1wt@#l+n-1r&)4(jd+=rz7&hxfz1gmc_&uix)2$m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.gymnastics.org.cn']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'xunlian',
     'chengji',
     'shenghua',
+    'analysis',
 ]
 
 AUTH_USER_MODEL = 'users.UserProfile'
