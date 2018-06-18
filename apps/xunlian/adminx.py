@@ -4,10 +4,10 @@
 """
 import  xadmin
 from xadmin import  views
-from  .models import XunlianDate
+from  .models import XunlianDate,XunlianSum
 from datetime import datetime
 from xlrd import xldate_as_tuple
-
+import xlrd
 
 class  XunlianDateAdmin(object):
     list_display = ['xingming','riqi','xiangmu','content']
@@ -35,9 +35,20 @@ class  XunlianDateAdmin(object):
                 XunlianDate.objects.bulk_create(sql_list)
             return super(XunlianDateAdmin, self).post(request, args, kwargs)
 
+class XunlianSumAdmin(object):
+    list_display = ['xingming', 'riqi', 'xiangmu', 'sum']
+    # search_fields = ['xingming_name',]
+    list_filter = ['xingming', 'riqi', 'xiangmu', 'sum']
 
+
+    data_charts = {
+        "user_count": {'title': u"训练次数统计(每月)", "x-field": "riqi", "y-field": ("sum",), "order": ('riqi',)},
+        # "avg_count": {'title': u"Avg Report", "x-field": "date", "y-field": ('avg_count',), "order": ('date',)}
+
+
+    }
 
 # xadmin.site.register(UserProfile,UserProfileAdmin)
 xadmin.site.register(XunlianDate,XunlianDateAdmin)
-# xadmin.site.register(XunlianSh,XunlianShAdmin)
+xadmin.site.register(XunlianSum,XunlianSumAdmin)
 # xadmin.site.register(XunlianCj,XunlianCjAdmin)

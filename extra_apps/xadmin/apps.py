@@ -8,7 +8,7 @@ class XAdminConfig(AppConfig):
     """Simple AppConfig which does not do automatic discovery."""
 
     name = 'xadmin'
-    verbose_name = _("Administration")
+    verbose_name = _("7-系统管理")
 
     def ready(self):
         self.module.autodiscover()

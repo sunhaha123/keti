@@ -10,6 +10,7 @@ class XunlianDate(models.Model):
     riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
     xiangmu = models.ForeignKey(Xiangmu, verbose_name=u'体操项目')
     content = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'训练内容')
+    # yuefen = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'训练月份')
 
     class Meta:
         verbose_name = u'训练记录'
@@ -19,33 +20,51 @@ class XunlianDate(models.Model):
         return self.xingming.name
 
 
-class XunlianSh(models.Model):
+# class XunlianSh(models.Model):
+#     xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
+#     riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
+#     gaotong = models.FloatField(verbose_name=u'睾酮')
+#
+#     class Meta:
+#         verbose_name = u'训练-生化'
+#         verbose_name_plural = verbose_name
+#
+#     def __str__(self):
+#         return self.xingming.name
+#
+# class XunlianCj(models.Model):
+#     xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
+#     riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
+#     mingcheng = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'赛事名称')
+#     xiangmu = models.ForeignKey(Xiangmu, verbose_name=u'体操项目')
+#     tianshu = models.IntegerField(verbose_name=u'累计训练天数')
+#     nandufen = models.FloatField(verbose_name=u'难度分')
+#     wanchengfen = models.FloatField(verbose_name=u'完成')
+#     zongfen = models.FloatField(verbose_name=u'总分')
+#     sbcishu = models.IntegerField(verbose_name=u'失败次数')
+#     sbyuanyin = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'失败原因')
+#
+#     class Meta:
+#         verbose_name = u'训练-成绩'
+#         verbose_name_plural = verbose_name
+#
+#     def __str__(self):
+#         return self.xingming.name
+
+
+class XunlianSum(models.Model):
     xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
-    riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
-    gaotong = models.FloatField(verbose_name=u'睾酮')
-
-    class Meta:
-        verbose_name = u'训练-生化'
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return self.xingming.name
-
-class XunlianCj(models.Model):
-    xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
-    riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
-    mingcheng = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'赛事名称')
+    riqi = models.DateField(null=True, blank=True, verbose_name=u'训练月份', default='2010-01')
     xiangmu = models.ForeignKey(Xiangmu, verbose_name=u'体操项目')
-    tianshu = models.IntegerField(verbose_name=u'累计训练天数')
-    nandufen = models.FloatField(verbose_name=u'难度分')
-    wanchengfen = models.FloatField(verbose_name=u'完成')
-    zongfen = models.FloatField(verbose_name=u'总分')
-    sbcishu = models.IntegerField(verbose_name=u'失败次数')
-    sbyuanyin = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'失败原因')
+    sum = models.IntegerField(verbose_name=u'训练总次数')
+    # content = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'训练内容')
+    # yuefen = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'训练月份')
 
     class Meta:
-        verbose_name = u'训练-成绩'
+        verbose_name = u'训练总数统计'
         verbose_name_plural = verbose_name
 
     def __str__(self):
         return self.xingming.name
+
+

@@ -41,14 +41,16 @@ class  ShenghuaDateAdmin(object):
                 sql_list.append(sql)
             ShenghuaDate.objects.bulk_create(sql_list)
         return super(ShenghuaDateAdmin, self).post(request, args, kwargs)
-# class  XunlianShAdmin(object):ma
-#     list_display = ['xingming','riqi','gaotong']
-#     # search_fields = ['xingming','riqi','gaotong']
-#     list_filter = ['xingming','riqi','gaotong']
-#     data_charts = {
-#             "user_count": {'title': u"训练-生化", "x-field": "riqi", "y-field": ("gaotong", ), "order": ('riqi',)},
-#             # "avg_count": {'title': u"Avg Report", "x-field": "date", "y-field": ('avg_count',), "order": ('date',)}
-#         }
+
+    data_charts = {
+            "user_count": {'title': u"生化指标-睾酮", "x-field": "date", "y-field": ("gaotong", ), "order": ('date',)},
+            # "avg_count": {'title': u"Avg Report", "x-field": "date", "y-field": ('avg_count',), "order": ('date',)}
+            "user_count2": {'title': u"生化指标-皮质醇", "x-field": "date", "y-field": ('pizhichun'), "order": ('date',)},
+            "user_count3": {'title': u"生化指标-尿素氮", "x-field": "date", "y-field": ( 'niaosudan', ), "order": ('date',)},
+            "user_count4": {'title': u"生化指标-肌酸激酶", "x-field": "date", "y-field": ( 'jisuanjimei', ), "order": ('date',)},
+            "user_count5": {'title': u"生化指标-TC", "x-field": "date", "y-field": ( 'tc'), "order": ('date',)},
+
+    }
 
 # xadmin.site.register(UserProfile,UserAdmin)
 # xadmin.site.register(UserProfile,UserProfileAdmin)

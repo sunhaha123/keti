@@ -4,4 +4,4 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 class YundongyuanConfig(AppConfig):
     name = 'yundongyuan'
-    verbose_name = u"运动员"
+    verbose_name = u"1-运动员信息"

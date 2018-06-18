@@ -14,7 +14,7 @@ class Xiangmu(models.Model):
 
 
     class Meta:
-        verbose_name = u'项目名称'
+        verbose_name = u'运动项目'
         verbose_name_plural = verbose_name
 
     def __str__(self):

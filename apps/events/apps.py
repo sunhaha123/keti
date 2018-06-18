@@ -4,4 +4,4 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 class EventsConfig(AppConfig):
     name = 'events'
-    verbose_name = u"运动项目"
+    verbose_name = u"2-运动项目信息"

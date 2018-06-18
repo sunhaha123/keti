@@ -134,7 +134,7 @@ class ChartsView(ListAdminView):
                 yf, yattrs, yv = lookup_field(yfname, obj, self)
                 datas[i]["data"].append((value, yv))
 
-        option = {'series': {'lines': {'show': True}, 'points': {'show': False}},
+        option = {'series': {'lines': {'show': True}, 'points': {'show': True}},
                   'grid': {'hoverable': True, 'clickable': True}}
         try:
             xfield = self.opts.get_field(self.x_field)
