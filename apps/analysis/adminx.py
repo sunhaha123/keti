@@ -8,7 +8,7 @@ from  .models import  XunlianSh,XunlianCj,ChengjiSh
 import xlrd
 from datetime import datetime
 from xlrd import xldate_as_tuple
-from xunlian.models import XunlianDate
+
 
 
 class  XunlianShAdmin(object):

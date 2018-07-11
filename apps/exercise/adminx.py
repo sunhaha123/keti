@@ -4,10 +4,11 @@
 """
 import  xadmin
 from xadmin import  views
-from  .models import XunlianDate,XunlianSum
+from  .models import XunlianDate,XunlianSum, Bingtu1
 from datetime import datetime
 from xlrd import xldate_as_tuple
 import xlrd
+from django.utils.safestring import mark_safe
 
 class  XunlianDateAdmin(object):
     list_display = ['xingming','riqi','xiangmu','content']
@@ -48,7 +49,18 @@ class XunlianSumAdmin(object):
 
     }
 
+class Bingtu1Admin(object):
+    list_display = ('title', 'image_data')
+    readonly_fields = ('image_data',)  #必须加这行 否则访问编辑页面会报错
+    def image_data(self, obj):
+        return mark_safe(u'<img src="%s" width="300px" />' % obj.image.url)
+    # 页面显示的字段名称
+    image_data.short_description = u'饼图图片'
+
+
+
+
 # xadmin.site.register(UserProfile,UserProfileAdmin)
 xadmin.site.register(XunlianDate,XunlianDateAdmin)
 xadmin.site.register(XunlianSum,XunlianSumAdmin)
-# xadmin.site.register(XunlianCj,XunlianCjAdmin)
+xadmin.site.register(Bingtu1,Bingtu1Admin)

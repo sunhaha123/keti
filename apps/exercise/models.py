@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from yundongyuan.models import Athlete
 from events.models import Xiangmu
-
+from django.utils.safestring import mark_safe
 # Create your models here.
 class XunlianDate(models.Model):
     xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
@@ -54,7 +54,7 @@ class XunlianDate(models.Model):
 
 class XunlianSum(models.Model):
     xingming = models.ForeignKey(Athlete, verbose_name=u'队员姓名')
-    riqi = models.DateField(null=True, blank=True, verbose_name=u'训练月份', default='2010-01')
+    riqi = models.DateField(null=True, blank=True, verbose_name=u'训练月份', default='2010-01-01')
     xiangmu = models.ForeignKey(Xiangmu, verbose_name=u'体操项目')
     sum = models.IntegerField(verbose_name=u'训练总次数')
     # content = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'训练内容')
@@ -68,3 +68,16 @@ class XunlianSum(models.Model):
         return self.xingming.name
 
 
+class Bingtu1(models.Model):
+    title = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'饼图标题')
+    image = models.ImageField(upload_to="image/%Y/%m",default=u'image/default.png',max_length=100,verbose_name=u'饼图')
+
+
+
+
+    class Meta:
+        verbose_name = u'训练次数饼图'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.title
