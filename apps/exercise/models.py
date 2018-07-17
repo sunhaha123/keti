@@ -71,7 +71,7 @@ class XunlianSum(models.Model):
 class Bingtu1(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'饼图标题')
     image = models.ImageField(upload_to="image/%Y/%m",default=u'image/default.png',max_length=100,verbose_name=u'饼图')
-
+    introduce = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'图表简介')
 
 
 

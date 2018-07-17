@@ -50,7 +50,7 @@ class XunlianSumAdmin(object):
     }
 
 class Bingtu1Admin(object):
-    list_display = ('title', 'image_data')
+    list_display = ('title', 'image_data','introduce')
     readonly_fields = ('image_data',)  #必须加这行 否则访问编辑页面会报错
     def image_data(self, obj):
         return mark_safe(u'<img src="%s" width="300px" />' % obj.image.url)

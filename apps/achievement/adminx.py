@@ -4,10 +4,11 @@
 """
 import  xadmin
 from xadmin import  views
-from  .models import ChengjiDate
+from  .models import ChengjiDate,Tubiao1
 import xlrd
 from xlrd import xldate_as_tuple
 from datetime import datetime
+from django.utils.safestring import mark_safe
 
 class  ChengjiDateAdmin(object):
     list_display = ['athlete','date','xiangmu','mingcheng','xiangmu','jibie','nandufen','wanchengfen','zongfen']
@@ -46,6 +47,15 @@ class  ChengjiDateAdmin(object):
             ChengjiDate.objects.bulk_create(sql_list)
         return super(ChengjiDateAdmin, self).post(request, args, kwargs)
 
+class Tubiao1Admin(object):
+        list_display = ('title', 'image_data','introduce')
+        readonly_fields = ('image_data',)  # 必须加这行 否则访问编辑页面会报错
+
+        def image_data(self, obj):
+            return mark_safe(u'<img src="%s" width="500px" />' % obj.image.url)
+
+        # 页面显示的字段名称
+        image_data.short_description = u'饼图图片'
 
 
 
@@ -53,4 +63,4 @@ class  ChengjiDateAdmin(object):
 
 # xadmin.site.register(UserProfile,UserProfileAdmin)
 xadmin.site.register(ChengjiDate,ChengjiDateAdmin)
-# xadmin.site.register(ChengjiSh,ChengjiShAdmin)
+xadmin.site.register(Tubiao1,Tubiao1Admin)

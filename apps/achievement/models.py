@@ -30,4 +30,16 @@ class ChengjiDate(models.Model):
     def __str__(self):
         return self.athlete.name
 
+class Tubiao1(models.Model):
+    title = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'标题')
+    image = models.ImageField(upload_to="image/%Y/%m",default=u'image/default.png',max_length=100,verbose_name=u'图表')
+    introduce = models.CharField(max_length=50, null=True, blank=True, verbose_name=u'图表简介')
 
+
+
+    class Meta:
+        verbose_name = u'成绩对比图'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.title
