@@ -224,8 +224,16 @@ class ExportPlugin(BaseAdminPlugin):
             content_type="%s; charset=UTF-8" % self.export_mimes[file_type])
 
         file_name = self.opts.verbose_name.replace(' ', '_')
-        response['Content-Disposition'] = ('attachment; filename=%s.%s' % (
-            file_name, file_type)).encode('utf-8')
+        # response['Content-Disposition'] = ('attachment; filename=%s.%s' % (
+            # file_name, file_type)).encode('utf-8')
+        from urllib.parse import quote
+        response["Content-Disposition"] = \
+            "attachment; " \
+            "filenane=%s.%s;" \
+            "filename*=UTF-8''%s.%s" % (
+                quote(file_name), file_type,
+                quote(file_name), file_type
+            )
 
         response.write(getattr(self, 'get_%s_export' % file_type)(context))
         return response

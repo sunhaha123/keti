@@ -17,9 +17,9 @@ class  ChengjiDateAdmin(object):
     model_icon = 'fa fa-trophy'
     import_excel=True
     data_charts = {
-            "user_count": {'title': u"训练-难度分", "x-field": "date", "y-field": ("nandufen", ), "order": ('date',)},
-            "user_count2": {'title': u"训练-完成分", "x-field": "date", "y-field": ("wanchengfen",), "order": ('date',)},
-            "user_count3": {'title': u"训练-总分", "x-field": "date", "y-field": ("zongfen",), "order": ('date',)},
+            "user_count": {'title': u"难度分", "x-field": "date", "y-field": ("nandufen", ), "order": ('date',)},
+            "user_count2": {'title': u"完成分", "x-field": "date", "y-field": ("wanchengfen",), "order": ('date',)},
+            "user_count3": {'title': u"总分", "x-field": "date", "y-field": ("zongfen",), "order": ('date',)},
             # "avg_count": {'title': u"Avg Report", "x-field": "date", "y-field": ('avg_count',), "order": ('date',)}
         }
     def post(self, request, *args, **kwargs):
