@@ -63,6 +63,10 @@ class ChengjiSh(models.Model):
     nandufen = models.FloatField(verbose_name=u'难度分')
     wanchengfen = models.FloatField(verbose_name=u'完成分')
     zongfen = models.FloatField(verbose_name=u'总分')
+    pizhichun = models.FloatField(verbose_name=u'皮质醇', default=0)
+    niaosudan = models.FloatField(verbose_name=u'尿素氮', default=0)
+    # tc = models.FloatField(verbose_name=u'T/C')
+    jisuanjimei = models.FloatField(verbose_name=u'肌酸激酶', default=0)
 
     class Meta:
         verbose_name = u'成绩-生化'

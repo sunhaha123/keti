@@ -33,6 +33,11 @@ except:
 
 class ExportMenuPlugin(BaseAdminPlugin):
 
+    # export_excel = False
+    # 初始化方法根据 ``say_hello`` 属性值返回
+    # def init_request(self, *args, **kwargs):
+    #     return bool(self.export_excel)
+
     list_export = ('xlsx', 'xls', 'csv', 'xml', 'json')
     export_names = {'xlsx': 'Excel 2007', 'xls': 'Excel', 'csv': 'CSV',
                     'xml': 'XML', 'json': 'JSON'}
@@ -54,6 +59,11 @@ class ExportMenuPlugin(BaseAdminPlugin):
 
 
 class ExportPlugin(BaseAdminPlugin):
+    export_excel = False
+
+    # 初始化方法根据 ``say_hello`` 属性值返回
+    # def init_request(self, *args, **kwargs):
+    #     return bool(self.export_excel)
 
     export_mimes = {'xlsx': 'application/vnd.ms-excel',
                     'xls': 'application/vnd.ms-excel', 'csv': 'text/csv',

@@ -34,13 +34,19 @@ class  XunlianCjAdmin(object):
         }
 
 class  ChengjiShAdmin(object):
-    list_display = ['xingming','riqi','gaotong','nandufen','wanchengfen','zongfen']
+    list_display = ['xingming','riqi','gaotong','pizhichun','niaosudan','jisuanjimei','nandufen','wanchengfen','zongfen']
     # search_fields = ['xingming','riqi','gaotong']
-    list_filter = ['xingming','riqi','gaotong','nandufen','wanchengfen','zongfen']
+    list_filter = ['xingming','riqi','gaotong','pizhichun','niaosudan','jisuanjimei','nandufen','wanchengfen','zongfen']
 
     data_charts = {
-            "user_count": {'title': u"生化(睾酮)-成绩", "x-field": "gaotong", "y-field": ("nandufen","zongfen" ), "order": ('gaotong',)},
+            "user_count": {'title': u"生化(睾酮)-成绩", "x-field": "gaotong", "y-field": ("nandufen","zongfen","wanchengfen" ), "order": ('gaotong',)},
             # "avg_count": {'title': u"Avg Report", "x-field": "date", "y-field": ('avg_count',), "order": ('date',)}
+        "user_count2": {'title': u"生化（皮质醇-成绩", "x-field": "pizhichun", "y-field": ("nandufen","zongfen","wanchengfen" ),
+                        "order": ('pizhichun',)},
+        "user_count3": {'title': u"生化（尿素氮）-成绩", "x-field": "niaosudan", "y-field": ("nandufen","zongfen","wanchengfen" ),
+                        "order": ('niaosudan',)},
+        "user_count4": {'title': u"生化（肌酸激酶）-成绩", "x-field": "jisuanjimei", "y-field": ("nandufen","zongfen","wanchengfen"),
+                        "order": ('jisuanjimei',)},
         }
 
 

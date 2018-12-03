@@ -50,6 +50,10 @@ class  ChengjiDateAdmin(object):
 class Tubiao1Admin(object):
         list_display = ('title', 'image_data','introduce')
         readonly_fields = ('image_data',)  # 必须加这行 否则访问编辑页面会报错
+        export_excel = False
+        # say_hello = False
+        # list_export = ('xlsx')
+        # list_export_fields = None
 
         def image_data(self, obj):
             return mark_safe(u'<img src="%s" width="500px" />' % obj.image.url)
