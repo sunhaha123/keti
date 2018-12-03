@@ -23,6 +23,10 @@ class XunlianSh(models.Model):
     xingming = models.ForeignKey(Athlete,related_name='XunlianSh_xingming',verbose_name=u'队员姓名')
     riqi = models.DateField(null=True, blank=True, verbose_name=u'训练日期', default='2010-01-01')
     gaotong = models.FloatField(verbose_name=u'睾酮')
+    pizhichun = models.FloatField(verbose_name=u'皮质醇',default=0)
+    niaosudan = models.FloatField(verbose_name=u'尿素氮',default=0)
+    # tc = models.FloatField(verbose_name=u'T/C')
+    jisuanjimei = models.FloatField(verbose_name=u'肌酸激酶',default=0)
 
     class Meta:
         verbose_name = u'训练-生化'

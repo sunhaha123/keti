@@ -11,9 +11,9 @@ from datetime import datetime
 from django.utils.safestring import mark_safe
 
 class  ChengjiDateAdmin(object):
-    list_display = ['athlete','date','xiangmu','mingcheng','xiangmu','jibie','nandufen','wanchengfen','zongfen']
+    list_display = ['athlete','date','xiangmu','mingcheng','jibie','nandufen','wanchengfen','zongfen']
     # search_fields = ['xingming_id','riqi','xiangmu','content']
-    list_filter = ['athlete','date','xiangmu','mingcheng','xiangmu','jibie','nandufen','wanchengfen','zongfen']
+    list_filter = ['athlete','date','xiangmu','mingcheng','jibie','nandufen','wanchengfen','zongfen']
     model_icon = 'fa fa-trophy'
     import_excel=True
     data_charts = {
