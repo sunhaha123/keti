@@ -16,11 +16,11 @@ class  XunlianShAdmin(object):
     # search_fields = ['xingming','riqi','gaotong']
     list_filter = ['xingming','riqi','leijishijian','gaotong','pizhichun','niaosudan','jisuanjimei',]
     data_charts = {
-            "user_count": {'title': u"训练（日期）-生化(睾酮)", "x-field": "leijishijian", "y-field": ("gaotong", ), "order": ('leijishijian',)},
+            "user_count": {'title': u"训练（天数）-生化(睾酮)", "x-field": "leijishijian", "y-field": ("gaotong", ), "order": ('leijishijian',)},
             # "avg_count": {'title': u"Avg Report", "x-field": "date", "y-field": ('avg_count',), "order": ('date',)}
-            "user_count2": {'title': u"训练（日期）-生化（皮质醇）", "x-field": "leijishijian", "y-field": ("pizhichun",), "order": ('leijishijian',)},
-            "user_count3": {'title': u"训练（日期）-生化（尿素氮）", "x-field": "leijishijian", "y-field": ("niaosudan",), "order": ('leijishijian',)},
-            "user_count4": {'title': u"训练（日期）-生化（肌酸激酶）", "x-field": "leijishijian", "y-field": ("jisuanjimei",), "order": ('leijishijian',)},
+            "user_count2": {'title': u"训练（天数）-生化（皮质醇）", "x-field": "leijishijian", "y-field": ("pizhichun",), "order": ('leijishijian',)},
+            "user_count3": {'title': u"训练（天数）-生化（尿素氮）", "x-field": "leijishijian", "y-field": ("niaosudan",), "order": ('leijishijian',)},
+            "user_count4": {'title': u"训练（天数）-生化（肌酸激酶）", "x-field": "leijishijian", "y-field": ("jisuanjimei",), "order": ('leijishijian',)},
         # "user_count": {'title': u"训练（日期）-生化", "x-field": "riqi", "y-field": ("yichang",), "order": ('riqi',)},
         }
 
