@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import  AbstractUser
 # Create your models here.
 class UserProfile(AbstractUser):
+
+
     nick_name = models.CharField(max_length=50,verbose_name=u'姓名')
     birthday = models.DateField(null=True,blank=True,verbose_name=u'生日',default='2010-01-01')
     gender = models.CharField(max_length=6,choices=(("male",u"男"),("female",u"女")),default=u"女",verbose_name=u'性别')
@@ -17,4 +19,4 @@ class UserProfile(AbstractUser):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.name
+        return self.username
